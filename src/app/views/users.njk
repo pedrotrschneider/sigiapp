@@ -67,13 +67,11 @@
                   <th>SENHA</th>
 
                   {% if committe.currentSession > 1 %}
-                    {% for delegate in delegates %}
-                      {% for x in delegate.presency %}
+                      {% for x in delegates[0].presency %}
                         {% if loop.index < committe.currentSession %}
                           <th>{{ loop.index }}</th>
                         {% endif %}
                       {% endfor %}
-                    {% endfor %}
                   {% endif %}
 
                 </tr>
@@ -87,16 +85,14 @@
                     <td>{{ delegate.password }}</td>
 
                     {% if committe.currentSession > 1 %}
-                      {% for delegate in delegates %}
-                        {% for x in delegate.presency %}
-                          {% if loop.index < committe.currentSession %}
-                            {% if x %}
-                              <td>P</td>
-                            {% else %}
-                              <td>A</td>
-                            {% endif %}
+                      {% for x in delegate.presency %}
+                        {% if loop.index < committe.currentSession %}
+                          {% if x %}
+                            <td>P</td>
+                          {% else %}
+                            <td>A</td>
                           {% endif %}
-                        {% endfor %}
+                        {% endif %}
                       {% endfor %}
                     {% endif %}
                   </tr>

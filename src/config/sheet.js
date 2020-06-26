@@ -49,7 +49,7 @@ class SheetController {
       if (index + 1 < committe.currentSession) {
         worksheet
           .cell(1, (3 + index + 1))
-          .string((index + 1).toString())
+          .string("Sessão " + (index + 1).toString())
           .style(titleStyle)
       }
     })
